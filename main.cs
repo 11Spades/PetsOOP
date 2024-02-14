@@ -4,6 +4,8 @@ using ClassLibrary1;
 
 public class MainClass
 {
+    static List<Pet> pets = new List<Pet>();
+
     static private void AddNewPet()
     {
         int userInput = -1;
@@ -37,14 +39,17 @@ public class MainClass
             {
                 case 1:
                     Cat newCat = new Cat(petName);
+                    pets.Add(newCat);
                     break;
 
                 case 2:
                     Chimpanzee newChimpanzee = new Chimpanzee(petName);
+                    pets.Add(newChimpanzee);
                     break;
 
                 case 3:
                     Turtle newTurtle = new Turtle(petName);
+                    pets.Add(newTurtle);
                     break;
 
                 case 4:
@@ -89,7 +94,10 @@ public class MainClass
                     break;
 
                 case 2:
-                    Console.WriteLine();
+                    foreach (Pet pet in pets)
+                    {
+                        pet.ShowInfo();
+                    }
                     break;
 
                 case 3:
